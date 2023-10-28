@@ -16,5 +16,9 @@ public class Pedra extends Coisa {
         }
         return retorno;
     }
+    @Override
+    public String get_jogada(){
+        return "Pedra";
+    }
 
 }

@@ -16,6 +16,9 @@ public class Tesoura extends Coisa{
         }
         return retorno;
     }
-    
+    @Override
+    public String get_jogada(){
+        return "Tesoura";
+    }
     
 }

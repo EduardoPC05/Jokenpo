@@ -3,38 +3,73 @@ package view;
 
 import java.util.Scanner;
 
+import model.Jogo;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println(ler_jogada());
+        Jogo novo = new Jogo();
+
+        novo.jogar();
+        
     }
 
     public static int modo_jogo(){
+        int resposta = -1;
+        System.out.println("\nESCOLHA DENTRE OS MODOS DE JOGO:\n");
+        System.out.println("1 - Máquina X Humano");
+        System.out.println("2 - Máquina X Máquina\n");
 
-        System.out.println("ESCOLHA DENTRE OS MODOS DE JOGO:");
-        System.out.println("01 - Máquina X Humano");
-        System.out.println("02 - Máquina X Máquina");
-        
         Scanner receber = new Scanner(System.in);
 
+        if(receber.hasNext()) {
+            do {
+                resposta = receber.nextInt();
+            } while (resposta < 1 || resposta > 3);
+        }
+        return resposta;
+    }
 
-        return receber.nextInt();
+    public static int ler_tipo_jogo(){
+        int resposta =  -1;
+        System.out.println("\nESCOLHA DENTRE OS TIPOS DE JOGO:\n");
+        System.out.println("1 - Simples");
+        System.out.println("2 - Melhor de três\n");
+
+        Scanner receber = new Scanner(System.in);
+
+        if(receber.hasNext()) {
+            do {
+                resposta = receber.nextInt();
+            } while (resposta < 1 || resposta > 3);
+        }
+        return resposta;
     }
 
     public static String ler_nome(){
-        System.out.println("DIGITE SEU NOME");
+        System.out.println("\nDIGITE SEU NOME\n");
         Scanner nome = new Scanner(System.in);
 
-        return nome.nextLine();
+        String name = nome.nextLine();
+
+        return name;
     }
 
     public static int ler_jogada(){
-        System.out.println("ESCOLHA SUA JOGADA");
+        int resposta;
+        System.out.println("\nESCOLHA SUA JOGADA\n");
         System.out.println("0 - Pedra");
         System.out.println("1 - Papel");
-        System.out.println("2 - Tesoura");
+        System.out.println("2 - Tesoura\n");
 
         Scanner jogada = new Scanner(System.in);
 
-        return jogada.nextInt();
+        
+        do {
+            resposta = jogada.nextInt();
+        } while (resposta < 0 || resposta > 2);
+
+        
+        return  resposta;
     }
+
 }

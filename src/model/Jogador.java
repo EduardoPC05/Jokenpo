@@ -16,7 +16,7 @@ public class Jogador {
         this.maquina = false;
         this.pontos = 0;
     }
-    public Jogador(String nome,boolean maquina) {
+    public Jogador(String nome) {
         this.nome = nome;
         this.escolha = instancia(escolhe_automatico());
         this.maquina = true;
@@ -50,8 +50,11 @@ public class Jogador {
     public Coisa getEscolha() {
         return escolha;
     }
-    public void setEscolha(Coisa escolha) {
-        this.escolha = escolha;
+    public void setEscolha(int escolha) {
+       this.escolha = instancia(escolha);
+    }
+    public void setEscolha(){
+        this.escolha = instancia(escolhe_automatico());
     }
     public String getNome() {
         return nome;

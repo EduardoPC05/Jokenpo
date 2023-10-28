@@ -17,4 +17,9 @@ public class Papel extends Coisa {
         return retorno;
     }
 
+    @Override
+    public String get_jogada(){
+        return "Papel";
+    }
+
 }
